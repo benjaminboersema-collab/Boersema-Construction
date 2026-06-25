@@ -1,8 +1,7 @@
-backend:
-  name: github
-  repo: benjaminboersema-collab/Boerema-Construction
+yamlbackend:
+  name: git-gateway
   branch: main
-
+  
 media_folder: "images/projects"
 public_folder: "/images/projects"
 
