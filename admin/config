@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: benjaminboersema-collab/Boerema-Construction
+  branch: main
+
+media_folder: "images/projects"
+public_folder: "/images/projects"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Phone Number", name: "phone", widget: "string", default: "069 706 5981" }
+          - { label: "WhatsApp Number (with country code, no +)", name: "whatsapp", widget: "string", default: "27697065981" }
+          - { label: "Email Address", name: "email", widget: "string", default: "info@boersemaconstruction.co.za" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string", default: "Boersema Construction" }
+          - { label: "Hero Tagline", name: "hero_tagline", widget: "string", default: "Foundations You Can Trust" }
+          - { label: "Hero Body Text", name: "hero_body", widget: "text", default: "Since 1991, Boersema Construction has delivered reliable building work across Gauteng." }
+          - { label: "About Text (paragraph 1)", name: "about_p1", widget: "text" }
+          - { label: "About Text (paragraph 2)", name: "about_p2", widget: "text" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "_data/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Residential — New Build", "Residential — Renovation", "Commercial — New Build", "Commercial — Renovation", "Industrial", "Interior — Renovation", "Exterior — Stonework"] }
+      - { label: "Short Description", name: "description", widget: "string" }
+      - { label: "Project Photo", name: "image", widget: "image" }
+      - { label: "Featured (shows wider in grid)", name: "featured", widget: "boolean", default: false }
+      - { label: "Sort Order", name: "order", widget: "number", default: 1 }
